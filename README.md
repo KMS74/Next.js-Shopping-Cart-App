@@ -2,6 +2,9 @@
 
 This project is a React Next.js app that consumes the Fake Store API (https://fakestoreapi.com) to display a list of products, allow users to add products to a cart, view the contents of their cart, and edit their cart.
 
+## Live Preview 
+https://next-js-shopping-cart-app.vercel.app/
+
 ## Required Technologies
 
 - Typescript
