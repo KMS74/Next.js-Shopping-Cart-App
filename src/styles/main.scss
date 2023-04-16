@@ -1,0 +1,9 @@
+.custom-button {
+    background-color: #713eb3;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    &:hover {
+      background-color: darken(#713eb3, 10%);
+    }
+  }
