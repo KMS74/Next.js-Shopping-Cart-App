@@ -23,7 +23,6 @@ function ResponsiveAppBar() {
     null
   );
 
-
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -36,31 +35,28 @@ function ResponsiveAppBar() {
 
   const { cartCount } = useCart();
 
-
   return (
     <AppBar>
       <Container>
-        <Toolbar >
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontWeight: 500,
-                color: "inherit",
-                textDecoration: "none",
-              }}
-              onClick={()=>{router.push('/')}}
-              style={{cursor:"pointer"}}
-            >
-
-              My Ecommerce Site
-            </Typography>
-         
-
+        <Toolbar>
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            sx={{
+              mr: 2,
+              display: { xs: "none", md: "flex" },
+              fontWeight: 500,
+              color: "inherit",
+              textDecoration: "none",
+            }}
+            onClick={() => {
+              router.push("/");
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            My Ecommerce Site
+          </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -93,9 +89,7 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-
                   <Typography textAlign="center">{page}</Typography>
-
                 </MenuItem>
               ))}
             </Menu>
@@ -103,27 +97,29 @@ function ResponsiveAppBar() {
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-                  <Link     key={page} style={{ textDecoration: "none", color: "#fff" }} href="/">
-
-              <Button
-            
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+              <Link
+                key={page}
+                style={{ textDecoration: "none", color: "#fff" }}
+                href="/"
               >
-                {page}
-              </Button>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page}
+                </Button>
               </Link>
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }} onClick={() => {
-            router.push("/cart");
-          }}>
+          <Box
+            sx={{ flexGrow: 0 }}
+            onClick={() => {
+              router.push("/cart");
+            }}
+          >
             <Tooltip title="Shopping Cart">
-              <IconButton
-
-                sx={{ p: 0 }}
-              >
+              <IconButton sx={{ p: 0 }}>
                 <Badge badgeContent={cartCount} color="error">
                   <ShoppingBagOutlinedIcon style={{ color: "white" }} />
                 </Badge>
