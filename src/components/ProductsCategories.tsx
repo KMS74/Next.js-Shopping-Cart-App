@@ -9,7 +9,13 @@ type Props = {
 const ProductsCategories = ({ categories }: Props) => {
   const router = useRouter();
   return (
-    <Stack direction="row" width="100%" spacing={5} alignItems="center" mb={4}>
+    <Stack
+      direction={{ lg: "row", sm: "column" }}
+      width="100%"
+      spacing={5}
+      alignItems="start"
+      mb={4}
+    >
       {categories.map((category) => (
         <Button
           key={category}
