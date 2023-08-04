@@ -1,14 +1,16 @@
 import Head from "next/head";
 import { ProductList } from "../components/ProductList";
-import { getProducts } from "../products-service";
+import { getCategories, getProducts } from "../products-service";
 import { Product } from "@/types";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import ProductsCategories from "@/components/ProductsCategories";
 
-interface Props {
+type Props = {
   products: Product[];
-}
+  categories: string[];
+};
 
-export default function Home({ products }: Props) {
+export default function Home({ products, categories }: Props) {
   return (
     <>
       <Head>
@@ -20,6 +22,16 @@ export default function Home({ products }: Props) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <Box>
+        <Typography
+          sx={{
+            textAlign: "center",
+            marginBottom: 6,
+          }}
+          variant="h2"
+        >
+          Product List
+        </Typography>
+        <ProductsCategories categories={categories} />
         <ProductList products={products} />
       </Box>
     </>
@@ -34,11 +46,14 @@ export async function getStaticProps() {
   // Call an external API endpoint to get products.
   // You can use any data fetching library and can also query the database directly.
   const products: Product[] = await getProducts();
+  const categories: string[] = await getCategories();
+
   // By returning { props: { products } }, the Home component
   // will receive `products` as a prop at build time in Production
   return {
     props: {
       products,
+      categories,
     },
   };
 }

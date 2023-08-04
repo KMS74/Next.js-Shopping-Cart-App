@@ -1,24 +1,20 @@
-import { Grid, Typography } from "@mui/material";
+import { Button, Grid, Stack, Typography } from "@mui/material";
 import { Product } from "../types";
 import ProductCard from "./ProductCard";
+import { type } from "os";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 // ProductList will be passed an Array of Products as Props
-interface Props {
+type Props = {
   products: Product[];
-}
+};
 
 export const ProductList = ({ products }: Props) => {
+  const router = useRouter();
+
   return (
     <>
-      <Typography
-        style={{
-          textAlign: "center",
-        }}
-        variant="h1"
-        gutterBottom
-      >
-        Product List
-      </Typography>
       <Grid container spacing={4}>
         {/* Listing All Product Cards */}
         {products.map((product) => (
