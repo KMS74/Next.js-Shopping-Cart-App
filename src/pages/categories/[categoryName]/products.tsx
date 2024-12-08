@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Product } from "@/types";
-import { getCategoyProducts } from "@/products-service";
+import { getCategoryProducts } from "@/products-service";
 import { ProductList } from "@/components/ProductList";
 import { Box, Typography } from "@mui/material";
 
@@ -13,7 +13,7 @@ const CategoryProducts = () => {
   useEffect(() => {
     const fetchCategoryProducts = async () => {
       if (categoryName) {
-        const products: Product[] = await getCategoyProducts(
+        const products: Product[] = await getCategoryProducts(
           categoryName as string
         );
 

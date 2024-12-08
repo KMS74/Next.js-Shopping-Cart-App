@@ -19,9 +19,6 @@ const CartContext = createContext<CartContextValue>({
   cartCount: 0,
 });
 
-export const useCart = () => {
-  return useContext(CartContext);
-};
 
 interface Props {
   children: React.ReactNode;
@@ -31,9 +28,12 @@ export const CartProvider = ({ children }: Props) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   const addToCart = (product: Product) => {
+   // check if the product is already in the cart or not
     const existingCartItemIndex = cartItems.findIndex(
       (item) => item.product.id === product.id
     );
+
+    // if the product is in the cart, update the quantity by 1
     if (existingCartItemIndex !== -1) {
       const existingCartItem = cartItems[existingCartItemIndex];
       const updatedCartItem = {
@@ -43,7 +43,9 @@ export const CartProvider = ({ children }: Props) => {
       const updatedCartItems = [...cartItems];
       updatedCartItems[existingCartItemIndex] = updatedCartItem;
       setCartItems(updatedCartItems);
-    } else {
+    }
+    // if the product is not in the cart, add the product with quantity 1
+    else {
       setCartItems([...cartItems, { product, quantity: 1 }]);
     }
   };
@@ -93,3 +95,12 @@ export const CartProvider = ({ children }: Props) => {
     </CartContext.Provider>
   );
 };
+
+
+export const useCart = () => {
+  if (CartContext === undefined) {
+    throw new Error("useCart must be used within a CartProvider");
+  }
+    return useContext(CartContext);
+}
+
