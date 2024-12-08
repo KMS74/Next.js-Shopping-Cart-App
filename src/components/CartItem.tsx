@@ -55,14 +55,14 @@ export const CartItemView = ({ item }: Props) => {
           <Typography variant="subtitle1">{item.product.title}</Typography>
         </Box>
       </Grid>
-      {/* Prooduct Quantity */}
+      {/* Product Quantity */}
       <Grid alignItems="center" item xs={12} sm={4}>
         <Stack direction="row" spacing={4} alignItems="center">
           <Typography variant="h5">
             ${(item.product.price * item.quantity).toFixed(2)}
           </Typography>
           <Box>
-            {/* Icreasing/Deacreasing Product Quantity Button  */}
+            {/* Increasing/Decreasing Product Quantity Button  */}
             <Stack alignItems="center" direction="row" spacing={1}>
               <IconButton
                 aria-label="decrease"
