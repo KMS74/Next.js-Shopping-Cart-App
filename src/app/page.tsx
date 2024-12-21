@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { getCategories, getProducts } from '@/products-service';
-import HomeView from './HomeView';
+import HomeView from '@/components/HomeView';
 
 export const metadata: Metadata = {
   title: 'Products List',
