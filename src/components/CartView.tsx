@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Grid,
-  Typography,
-  Container,
-  Divider,
-} from "@mui/material";
+import { Box, Button, Typography, Container, Divider } from "@mui/material";
 import { useCart } from "../CartContext";
 import { CartItemView } from "./CartItem";
 
@@ -36,7 +29,7 @@ export const CartView = () => {
       ) : (
         <>
           {/* Listing all items in the cart */}
-          {cartItems.map((item: any) => (
+          {cartItems.map((item) => (
             <Box key={item.product.id} mb={6}>
               <CartItemView item={item} />
             </Box>

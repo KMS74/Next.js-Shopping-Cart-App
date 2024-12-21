@@ -1,12 +1,4 @@
-import {
-  Box,
-  Grid,
-  Typography,
-  IconButton,
-  Button,
-  TextField,
-  Stack,
-} from "@mui/material";
+import { Box, Grid, Typography, IconButton, Stack } from "@mui/material";
 import Image from "next/image";
 import { CartItem } from "../types";
 import { useCart } from "../CartContext";
