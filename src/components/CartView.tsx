@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Button, Typography, Container, Divider } from '@mui/material';
 import { useCart } from '../CartContext';
 import { CartItemView } from './CartItem';
