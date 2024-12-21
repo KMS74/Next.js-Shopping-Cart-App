@@ -1,6 +1,6 @@
-import { Grid } from "@mui/material";
-import { Product } from "../types";
-import ProductCard from "./ProductCard";
+import { Grid } from '@mui/material';
+import { Product } from '../types';
+import ProductCard from './ProductCard';
 
 // ProductList will be passed an Array of Products as Props
 type Props = {

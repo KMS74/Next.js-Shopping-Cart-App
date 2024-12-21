@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import { Product } from "@/types";
-import { getCategoryProducts } from "@/products-service";
-import { ProductList } from "@/components/ProductList";
-import { Box, Typography } from "@mui/material";
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { Product } from '@/types';
+import { getCategoryProducts } from '@/products-service';
+import { ProductList } from '@/components/ProductList';
+import { Box, Typography } from '@mui/material';
 
 const CategoryProducts = () => {
   const router = useRouter();

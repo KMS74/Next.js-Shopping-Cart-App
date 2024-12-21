@@ -1,13 +1,13 @@
-import * as React from "react";
-import { CartProvider } from "@/CartContext";
-import ResponsiveAppBar from "@/components/Navbar";
-import Container from "@mui/material/Container";
-import type { AppProps } from "next/app";
-import IconButton from "@mui/material/IconButton";
-import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
-import { Tooltip } from "@mui/material";
+import * as React from 'react';
+import { CartProvider } from '@/CartContext';
+import ResponsiveAppBar from '@/components/Navbar';
+import Container from '@mui/material/Container';
+import type { AppProps } from 'next/app';
+import IconButton from '@mui/material/IconButton';
+import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { Tooltip } from '@mui/material';
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -22,7 +22,7 @@ function ThemeSwitcher() {
           onClick={colorMode.toggleColorMode}
           color="inherit"
         >
-          {theme.palette.mode === "dark" ? (
+          {theme.palette.mode === 'dark' ? (
             <Brightness7Icon />
           ) : (
             <Brightness4Icon />
@@ -34,11 +34,11 @@ function ThemeSwitcher() {
 }
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [mode, setMode] = React.useState<"light" | "dark">("light");
+  const [mode, setMode] = React.useState<'light' | 'dark'>('light');
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
       },
     }),
     []
@@ -51,10 +51,10 @@ export default function App({ Component, pageProps }: AppProps) {
         palette: {
           mode,
           primary: {
-            main: "#303f9f",
+            main: '#303f9f',
           },
           secondary: {
-            main: "#f50057",
+            main: '#f50057',
           },
         },
       }),
@@ -69,7 +69,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <ResponsiveAppBar />
             <Container
               style={{
-                marginTop: "100px",
+                marginTop: '100px',
               }}
             >
               <ThemeSwitcher />

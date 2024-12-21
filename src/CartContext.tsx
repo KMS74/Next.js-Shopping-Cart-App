@@ -1,5 +1,5 @@
-import { createContext, useContext, useState } from "react";
-import { CartItem, Product } from "./types";
+import { createContext, useContext, useState } from 'react';
+import { CartItem, Product } from './types';
 
 interface CartContextValue {
   cartItems: CartItem[];
@@ -19,7 +19,6 @@ const CartContext = createContext<CartContextValue>({
   cartCount: 0,
 });
 
-
 interface Props {
   children: React.ReactNode;
 }
@@ -28,7 +27,7 @@ export const CartProvider = ({ children }: Props) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   const addToCart = (product: Product) => {
-   // check if the product is already in the cart or not
+    // check if the product is already in the cart or not
     const existingCartItemIndex = cartItems.findIndex(
       (item) => item.product.id === product.id
     );
@@ -96,11 +95,9 @@ export const CartProvider = ({ children }: Props) => {
   );
 };
 
-
 export const useCart = () => {
   if (CartContext === undefined) {
-    throw new Error("useCart must be used within a CartProvider");
+    throw new Error('useCart must be used within a CartProvider');
   }
-    return useContext(CartContext);
-}
-
+  return useContext(CartContext);
+};

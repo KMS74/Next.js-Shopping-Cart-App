@@ -1,9 +1,9 @@
-import React from "react";
-import { Box, Button, Typography } from "@mui/material";
-import { Product } from "../types";
-import { useCart } from "../CartContext";
-import Image from "next/image";
-import { useRouter } from "next/router";
+import React from 'react';
+import { Box, Button, Typography } from '@mui/material';
+import { Product } from '../types';
+import { useCart } from '../CartContext';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 interface Props {
   product: Product;
@@ -18,7 +18,7 @@ const ProductCard = ({ product }: Props) => {
   };
 
   return (
-    <Box sx={{ cursor: "pointer" }}>
+    <Box sx={{ cursor: 'pointer' }}>
       <Box
         onClick={() => router.push(`/products/${product?.id}/product-details`)}
       >

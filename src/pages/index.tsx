@@ -1,9 +1,9 @@
-import Head from "next/head";
-import { ProductList } from "../components/ProductList";
-import { getCategories, getProducts } from "../products-service";
-import { Product } from "@/types";
-import { Box, Typography } from "@mui/material";
-import ProductsCategories from "@/components/ProductsCategories";
+import Head from 'next/head';
+import { ProductList } from '../components/ProductList';
+import { getCategories, getProducts } from '../products-service';
+import { Product } from '@/types';
+import { Box, Typography } from '@mui/material';
+import ProductsCategories from '@/components/ProductsCategories';
 
 type Props = {
   products: Product[];
@@ -24,7 +24,7 @@ export default function Home({ products, categories }: Props) {
       <Box>
         <Typography
           sx={{
-            textAlign: "center",
+            textAlign: 'center',
             marginBottom: 6,
           }}
           variant="h2"

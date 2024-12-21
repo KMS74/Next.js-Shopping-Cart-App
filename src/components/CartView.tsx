@@ -1,6 +1,6 @@
-import { Box, Button, Typography, Container, Divider } from "@mui/material";
-import { useCart } from "../CartContext";
-import { CartItemView } from "./CartItem";
+import { Box, Button, Typography, Container, Divider } from '@mui/material';
+import { useCart } from '../CartContext';
+import { CartItemView } from './CartItem';
 
 export const CartView = () => {
   const { cartItems, cartTotal } = useCart();
@@ -9,7 +9,7 @@ export const CartView = () => {
     <Container>
       <Typography
         style={{
-          textAlign: "center",
+          textAlign: 'center',
         }}
         variant="h3"
         mb={10}
@@ -19,7 +19,7 @@ export const CartView = () => {
       {cartItems.length === 0 ? (
         <Typography
           style={{
-            textAlign: "center",
+            textAlign: 'center',
           }}
           variant="subtitle1"
           gutterBottom
