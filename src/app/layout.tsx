@@ -1,8 +1,6 @@
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-
 import { Roboto } from 'next/font/google';
-import { ThemeProvider } from '@mui/material/styles';
-import theme from '@/theme';
+import { Metadata, Viewport } from 'next';
+import AppProviders from '@/components/AppProviders';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -12,6 +10,22 @@ const roboto = Roboto({
 });
 
 // -----------------------------------------------------------------------------
+
+export const metadata: Metadata = {
+  title: {
+    default: 'E-commerce Next.js App',
+    template: '%s | E-commerce Next.js App',
+  },
+  description: 'E-commerce Next.js App with Material-UI and TypeScript',
+};
+
+export const viewport: Viewport = {
+  initialScale: 1,
+  width: 'device-width',
+};
+
+// -----------------------------------------------------------------------------
+
 type Props = {
   children: React.ReactNode;
 };
@@ -20,9 +34,7 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en" className={roboto.variable}>
       <body>
-        <ThemeProvider theme={theme}>
-          <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
-        </ThemeProvider>
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   );
