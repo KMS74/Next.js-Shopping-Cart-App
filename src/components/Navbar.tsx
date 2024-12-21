@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Link from 'next/link';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { useCart } from '../CartContext';
 
 const pages = ['Products', 'Collections', 'Blog', 'About us'];

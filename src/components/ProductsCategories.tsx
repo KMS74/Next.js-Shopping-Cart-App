@@ -1,6 +1,6 @@
 import { Button, Stack } from '@mui/material';
 import React from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 type Props = {
   categories: string[];

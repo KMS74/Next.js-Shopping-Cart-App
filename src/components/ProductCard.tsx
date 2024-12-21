@@ -3,7 +3,7 @@ import { Box, Button, Typography } from '@mui/material';
 import { Product } from '../types';
 import { useCart } from '../CartContext';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 interface Props {
   product: Product;
