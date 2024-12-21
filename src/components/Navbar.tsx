@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Link from 'next/link';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import { useRouter } from 'next/navigation';
-import { useCart } from '../CartContext';
+import { useCart } from '../contexts/CartContext';
 
 const pages = ['Products', 'Collections', 'Blog', 'About us'];
 

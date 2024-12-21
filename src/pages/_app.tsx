@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-import { CartProvider } from '@/CartContext';
+import { CartProvider } from '@/contexts/CartContext';
 import ResponsiveAppBar from '@/components/Navbar';
 import { Container } from '@mui/material';
 

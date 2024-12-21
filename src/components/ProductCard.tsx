@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
 import { Product } from '../types';
-import { useCart } from '../CartContext';
+import { useCart } from '../contexts/CartContext';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 

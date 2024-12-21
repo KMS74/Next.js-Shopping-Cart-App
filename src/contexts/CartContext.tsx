@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext, useState } from 'react';
-import { CartItem, Product } from './types';
+import { CartItem, Product } from '@/types';
 
 interface CartContextValue {
   cartItems: CartItem[];
@@ -12,6 +12,7 @@ interface CartContextValue {
   cartCount: number;
 }
 
+// Create a context with default values
 const CartContext = createContext<CartContextValue>({
   cartItems: [],
   addToCart: () => {},
@@ -25,6 +26,7 @@ interface Props {
   children: React.ReactNode;
 }
 
+// Create a provider component that wraps the children components
 export const CartProvider = ({ children }: Props) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
@@ -97,6 +99,7 @@ export const CartProvider = ({ children }: Props) => {
   );
 };
 
+// Create a custom hook to use the CartContext
 export const useCart = () => {
   if (CartContext === undefined) {
     throw new Error('useCart must be used within a CartProvider');

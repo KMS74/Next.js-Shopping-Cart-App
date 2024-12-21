@@ -1,7 +1,7 @@
 'use client';
 
 import { Box, Button, Typography, Container, Divider } from '@mui/material';
-import { useCart } from '../CartContext';
+import { useCart } from '../contexts/CartContext';
 import { CartItemView } from './CartItem';
 
 export const CartView = () => {

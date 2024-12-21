@@ -1,7 +1,7 @@
 import { Box, Grid, Typography, IconButton, Stack } from '@mui/material';
 import Image from 'next/image';
 import { CartItem } from '../types';
-import { useCart } from '../CartContext';
+import { useCart } from '../contexts/CartContext';
 import { DeleteOutlineOutlined, Add, Remove } from '@mui/icons-material';
 
 interface Props {
