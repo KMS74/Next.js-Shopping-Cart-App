@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { getCategories, getProducts } from '@/products-service';
+import { getCategories, getProducts } from '@/services/products.service';
 import HomeView from '@/components/HomeView';
 
 export const metadata: Metadata = {

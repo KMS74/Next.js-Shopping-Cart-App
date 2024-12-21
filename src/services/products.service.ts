@@ -1,4 +1,4 @@
-import { Product } from './types';
+import { Product } from '../types';
 
 const API_URL = 'https://fakestoreapi.com';
 
