@@ -1,6 +1,6 @@
 import { Product } from '@/types';
 
-const API_URL = 'https://fakestoreapi.com';
+export const API_URL = 'https://fakestoreapi.com';
 
 // Getting all products from fake store API
 export const getProducts = async () => {
