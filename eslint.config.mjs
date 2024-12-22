@@ -10,6 +10,7 @@ const eslintConfig = [
     extends: ['next/core-web-vitals', 'next/typescript', 'prettier'],
     plugins: ['prettier'],
     rules: {
+      'no-console': 'warn',
       'prettier/prettier': ['error', { endOfLine: 'auto' }],
     },
     ignorePatterns: ['node_modules/', '.next/', 'out/'],
