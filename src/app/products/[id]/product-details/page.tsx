@@ -33,13 +33,12 @@ export async function generateMetadata({ params }: Props) {
 export default async function ProductDetailsPage({ params }: Props) {
   const { id } = await params;
 
-  console.log('id', id);
-
   if (!id) {
     notFound();
   }
 
   const product = await getProduct(id);
+
   return (
     <Stack>
       <Typography variant="h4" paragraph>
