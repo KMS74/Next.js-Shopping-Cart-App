@@ -1,7 +1,7 @@
+import { Suspense } from 'react';
 import { Box, Typography } from '@mui/material';
 import { decodeCategoryName, unslugify } from '@/lib/utils';
 import { getCategories } from '@/services/products.service';
-import { Suspense } from 'react';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import CategoryProducts from '@/components/CategoryProducts';
 
