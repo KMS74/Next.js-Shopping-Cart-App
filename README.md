@@ -9,10 +9,9 @@ https://next-js-shopping-cart-app.vercel.app/
 ## Required Technologies
 
 - Typescript
-- Reactjs
-- Next.js
-- Context API
-- SCSS
+- React.js 19
+- React Context API
+- Next.js 15 App Router
 - Material UI
 
 ## Usage
@@ -33,7 +32,7 @@ The cart page displays the contents of the user's cart, including the items quan
 - Allows users to add products to their cart.
 - Allows users to view the contents of their cart.
 - Allows users to edit the quantity of items in their cart or remove items entirely.
-- React Material UI custome theme
+- React Material UI custom theme
 - Toggle between light and dark theme
 
 ## Contributing
@@ -70,14 +69,6 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 
