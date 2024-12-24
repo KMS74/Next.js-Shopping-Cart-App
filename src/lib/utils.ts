@@ -11,3 +11,6 @@ export const slugify = (text: string) => {
 export const unslugify = (text: string) => {
   return text.replace(/-/g, ' ');
 };
+
+export const sleep = (ms: number) =>
+  new Promise((resolve) => setTimeout(resolve, ms));

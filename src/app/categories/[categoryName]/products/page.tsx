@@ -1,10 +1,9 @@
 import { Box, Typography } from '@mui/material';
-import { ProductList } from '@/components/ProductList';
 import { decodeCategoryName, unslugify } from '@/lib/utils';
-import {
-  getCategories,
-  getCategoryProducts,
-} from '@/services/products.service';
+import { getCategories } from '@/services/products.service';
+import { Suspense } from 'react';
+import LoadingSpinner from '@/components/LoadingSpinner';
+import CategoryProducts from '@/components/CategoryProducts';
 
 type Props = {
   params: Promise<{ categoryName: string }>;
@@ -33,8 +32,6 @@ export async function generateMetadata({ params }: Props) {
 export default async function CategoryProductsPage({ params }: Props) {
   const { categoryName } = await params;
 
-  const products = await getCategoryProducts(unslugify(categoryName));
-
   const displacedCategoryName = decodeCategoryName(unslugify(categoryName));
 
   return (
@@ -42,7 +39,9 @@ export default async function CategoryProductsPage({ params }: Props) {
       <Typography variant="h4" paragraph>
         {displacedCategoryName} Products
       </Typography>
-      <ProductList products={products} />
+      <Suspense fallback={<LoadingSpinner />}>
+        <CategoryProducts categoryName={categoryName} />
+      </Suspense>
     </Box>
   );
 }

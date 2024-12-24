@@ -1,13 +1,11 @@
-import { Stack, Link as MuiLink } from '@mui/material';
-import React from 'react';
 import NextLink from 'next/link';
+import { Stack, Link as MuiLink } from '@mui/material';
+import { getCategories } from '@/services/products.service';
 import { capitalizeFirstLetter, slugify } from '@/lib/utils';
 
-type Props = {
-  categories: string[];
-};
+const ProductsCategories = async () => {
+  const categories = await getCategories();
 
-const ProductsCategories = ({ categories }: Props) => {
   return (
     <Stack
       direction={{ lg: 'row', sm: 'column' }}
