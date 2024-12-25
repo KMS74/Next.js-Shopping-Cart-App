@@ -9,7 +9,7 @@ type Props = {
   params: Promise<{ categoryName: string }>;
 };
 
-// Return a list of `params` to populate the [id] dynamic segment
+// Return a list of `params` to populate the [categoryName] dynamic segment
 export async function generateStaticParams() {
   const categories = await getCategories();
 
