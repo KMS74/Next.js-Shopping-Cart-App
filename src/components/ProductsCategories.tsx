@@ -1,30 +1,30 @@
-import { Button, Stack } from "@mui/material";
-import React from "react";
-import { useRouter } from "next/router";
+import NextLink from 'next/link';
+import { Stack, Link as MuiLink } from '@mui/material';
+import { getCategories } from '@/services/products.service';
+import { capitalizeFirstLetter, slugify } from '@/lib/utils';
 
-type Props = {
-  categories: string[];
-};
+const ProductsCategories = async () => {
+  const categories = await getCategories();
 
-const ProductsCategories = ({ categories }: Props) => {
-  const router = useRouter();
   return (
     <Stack
-      direction={{ lg: "row", sm: "column" }}
+      direction={{ lg: 'row', sm: 'column' }}
       width="100%"
       spacing={5}
       alignItems="start"
       mb={4}
     >
       {categories.map((category) => (
-        <Button
+        <MuiLink
+          component={NextLink}
           key={category}
-          onClick={() => {
-            router.push(`/categories/${category}/products`);
+          href={`/categories/${slugify(category)}/products`}
+          sx={{
+            fontFamily: 'var(--font-roboto)',
           }}
         >
-          {category}
-        </Button>
+          {capitalizeFirstLetter(category)}
+        </MuiLink>
       ))}
     </Stack>
   );

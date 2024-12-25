@@ -1,7 +1,6 @@
-import { Grid } from "@mui/material";
-import { Product } from "../types";
-import ProductCard from "./ProductCard";
-import { useRouter } from "next/router";
+import { Grid } from '@mui/material';
+import { Product } from '../types';
+import ProductCard from './ProductCard';
 
 // ProductList will be passed an Array of Products as Props
 type Props = {
@@ -9,8 +8,6 @@ type Props = {
 };
 
 export const ProductList = ({ products }: Props) => {
-  const router = useRouter();
-
   return (
     <Grid container spacing={4}>
       {/* Listing All Product Cards */}

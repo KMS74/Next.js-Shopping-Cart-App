@@ -1,0 +1,25 @@
+# Ignore all node_modules
+node_modules
+
+# Ignore build directory
+dist
+
+# Ignore test files
+*.test.js
+*.spec.js
+
+# Ignore configuration files
+*.config.js
+
+# Ignore any log files
+*.log
+
+# Ignore coverage directory
+coverage
+
+# Ignore any temporary files
+*.tmp
+*.temp
+
+# Ignore pnpm-lock.yaml
+pnpm-lock.yaml
