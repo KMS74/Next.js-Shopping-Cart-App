@@ -1,12 +1,8 @@
-'use client';
-
-import { Box, Button, Typography, Container, Divider } from '@mui/material';
-import { useCart } from '../contexts/CartContext';
-import { CartItemView } from './CartItem';
+import { Typography, Container } from '@mui/material';
+import ShoppingCartList from './ShoppingCartList';
+import TotalShoppingCartPrice from './TotalShoppingCartPrice';
 
 export const CartView = () => {
-  const { cartItems, cartTotal } = useCart();
-
   return (
     <Container>
       <Typography
@@ -14,42 +10,14 @@ export const CartView = () => {
           textAlign: 'center',
         }}
         variant="h3"
-        mb={10}
+        gutterBottom
       >
         Shopping Cart
       </Typography>
-      {cartItems.length === 0 ? (
-        <Typography
-          style={{
-            textAlign: 'center',
-          }}
-          variant="subtitle1"
-          gutterBottom
-        >
-          Your cart is empty
-        </Typography>
-      ) : (
-        <>
-          {/* Listing all items in the cart */}
-          {cartItems.map((item) => (
-            <Box key={item.product.id} mb={6}>
-              <CartItemView item={item} />
-            </Box>
-          ))}
 
-          <Divider></Divider>
+      <ShoppingCartList />
 
-          <Box mt={2}>
-            <Typography variant="h5">
-              Total Cost: ${cartTotal.toFixed(2)}
-            </Typography>
-          </Box>
-
-          <Box mt={2} mb={6}>
-            <Button variant="outlined">Checkout</Button>
-          </Box>
-        </>
-      )}
+      <TotalShoppingCartPrice />
     </Container>
   );
 };
