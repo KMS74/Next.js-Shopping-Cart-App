@@ -1,15 +1,22 @@
 'use client';
 
-import React from 'react';
-import { Box, Button, Typography } from '@mui/material';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  Typography,
+  Button,
+  CardActions,
+} from '@mui/material';
+
 import { Product } from '../types';
 import { useCart } from '../contexts/CartContext';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
-interface Props {
+type Props = {
   product: Product;
-}
+};
 
 const ProductCard = ({ product }: Props) => {
   const { addToCart } = useCart();
@@ -20,24 +27,49 @@ const ProductCard = ({ product }: Props) => {
   };
 
   return (
-    <Box sx={{ cursor: 'pointer' }}>
-      <Box
+    <Card
+      sx={{
+        maxWidth: 400,
+      }}
+    >
+      <CardActionArea
         onClick={() => router.push(`/products/${product?.id}/product-details`)}
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'start',
+          height: '100%',
+        }}
       >
         <Image
-          priority
           src={product?.image}
           alt={product?.title}
-          width={300}
           height={300}
+          width={300}
+          sizes="(max-width: 600px) 100vw, 600px"
+          priority
+          style={{
+            objectFit: 'contain',
+            alignSelf: 'center',
+          }}
         />
-        <Typography variant="h6">{product?.title}</Typography>
-        <Typography variant="subtitle1">{product?.category}</Typography>
-        <Typography variant="subtitle1">
-          ${product?.price?.toFixed(2)}
-        </Typography>
-      </Box>
-      <Box mt={1}>
+        <CardContent>
+          <Typography gutterBottom variant="h6" title={product?.title}>
+            {product?.title.slice(0, 25)}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {product?.category}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            ${product?.price?.toFixed(2)}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions
+        sx={{
+          paddingY: 2,
+        }}
+      >
         <Button
           color="primary"
           variant="contained"
@@ -45,8 +77,8 @@ const ProductCard = ({ product }: Props) => {
         >
           Add to Cart
         </Button>
-      </Box>
-    </Box>
+      </CardActions>
+    </Card>
   );
 };
 
