@@ -9,6 +9,7 @@ import {
   Typography,
   Button,
   CardActions,
+  Tooltip,
 } from '@mui/material';
 
 import { Product } from '../types';
@@ -54,9 +55,12 @@ const ProductCard = ({ product }: Props) => {
           }}
         />
         <CardContent>
-          <Typography gutterBottom variant="h6" title={product?.title}>
-            {product?.title.slice(0, 25)}
-          </Typography>
+          <Tooltip title={product?.title}>
+            <Typography gutterBottom variant="h6">
+              {product?.title.slice(0, 30) +
+                (product?.title.length > 30 ? '...' : '')}
+            </Typography>
+          </Tooltip>
           <Typography variant="body2" color="text.secondary">
             {product?.category}
           </Typography>
