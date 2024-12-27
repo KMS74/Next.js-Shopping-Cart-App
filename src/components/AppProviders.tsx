@@ -5,7 +5,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from '@/theme';
 import { CartProvider } from '@/contexts/CartContext';
 import ResponsiveAppBar from '@/components/Navbar';
-import { Container } from '@mui/material';
+import { Container, CssBaseline } from '@mui/material';
 
 const AppProviders = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -18,6 +18,7 @@ const AppProviders = ({ children }: { children: React.ReactNode }) => {
               marginTop: 10,
             }}
           >
+            <CssBaseline />
             {children}
           </Container>
         </CartProvider>
