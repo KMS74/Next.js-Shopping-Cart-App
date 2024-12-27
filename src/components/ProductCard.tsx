@@ -14,6 +14,7 @@ import {
 
 import { Product } from '../types';
 import { useCart } from '../contexts/CartContext';
+import { ShoppingBagOutlined } from '@mui/icons-material';
 
 type Props = {
   product: Product;
@@ -29,8 +30,12 @@ const ProductCard = ({ product }: Props) => {
 
   return (
     <Card
+      elevation={0}
       sx={{
         maxWidth: 400,
+        border: '2px solid',
+        borderColor: 'grey.200',
+        borderRadius: 2,
       }}
     >
       <CardActionArea
@@ -40,6 +45,7 @@ const ProductCard = ({ product }: Props) => {
           flexDirection: 'column',
           alignItems: 'start',
           height: '100%',
+          py: 2,
         }}
       >
         <Image
@@ -54,6 +60,7 @@ const ProductCard = ({ product }: Props) => {
             alignSelf: 'center',
           }}
         />
+
         <CardContent>
           <Tooltip title={product?.title}>
             <Typography gutterBottom variant="h6">
@@ -75,6 +82,7 @@ const ProductCard = ({ product }: Props) => {
         }}
       >
         <Button
+          startIcon={<ShoppingBagOutlined />}
           color="primary"
           variant="contained"
           onClick={() => onAddToCart(product)}
