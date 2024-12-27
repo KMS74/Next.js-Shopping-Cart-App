@@ -1,4 +1,10 @@
-import { Box, Grid, Typography, IconButton, Stack } from '@mui/material';
+import {
+  Box,
+  Grid2 as Grid,
+  Typography,
+  IconButton,
+  Stack,
+} from '@mui/material';
 import Image from 'next/image';
 import { CartItem } from '../types';
 import { useCart } from '../contexts/CartContext';
@@ -31,9 +37,7 @@ export const CartItemView = ({ item }: Props) => {
         alignItems="center"
         gap={1}
         alignSelf="center"
-        item
-        xs={12}
-        sm={4}
+        size={{ xs: 12, sm: 4 }}
       >
         <Box>
           <Image
@@ -48,7 +52,7 @@ export const CartItemView = ({ item }: Props) => {
         </Box>
       </Grid>
       {/* Product Quantity */}
-      <Grid alignItems="center" item xs={12} sm={4}>
+      <Grid alignItems="center" size={{ xs: 12, sm: 4 }}>
         <Stack direction="row" spacing={4} alignItems="center">
           <Typography variant="h5">
             ${(item.product.price * item.quantity).toFixed(2)}
@@ -80,7 +84,7 @@ export const CartItemView = ({ item }: Props) => {
         </Stack>
       </Grid>
       {/* Removing Product From Cart */}
-      <Grid item xs={12} sm={4}>
+      <Grid size={{ xs: 12, sm: 4 }}>
         <IconButton
           aria-label="remove"
           color="error"

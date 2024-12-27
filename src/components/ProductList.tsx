@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import { Product } from '../types';
 import ProductCard from './ProductCard';
 
@@ -12,7 +12,7 @@ export const ProductList = ({ products }: Props) => {
     <Grid container spacing={4}>
       {/* Listing All Product Cards */}
       {products.map((product) => (
-        <Grid item xs={12} sm={6} md={4} key={product.id}>
+        <Grid size={{ xs: 12, sm: 6, md: 4 }} key={product.id}>
           <ProductCard product={product} />
         </Grid>
       ))}
