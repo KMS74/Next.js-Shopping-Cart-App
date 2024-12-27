@@ -22,7 +22,7 @@ const ProductCard = ({ product }: Props) => {
   const { addToCart } = useCart();
   const router = useRouter();
 
-  const handleAddToCartClick = (product: Product) => {
+  const onAddToCart = (product: Product) => {
     addToCart(product);
   };
 
@@ -73,7 +73,7 @@ const ProductCard = ({ product }: Props) => {
         <Button
           color="primary"
           variant="contained"
-          onClick={() => handleAddToCartClick(product)}
+          onClick={() => onAddToCart(product)}
         >
           Add to Cart
         </Button>
