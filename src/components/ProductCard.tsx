@@ -57,8 +57,8 @@ const ProductCard = ({ product }: Props) => {
         <CardContent>
           <Tooltip title={product?.title}>
             <Typography gutterBottom variant="h6">
-              {product?.title.slice(0, 30) +
-                (product?.title.length > 30 ? '...' : '')}
+              {product?.title.slice(0, 28) +
+                (product?.title.length > 28 ? '...' : '')}
             </Typography>
           </Tooltip>
           <Typography variant="body2" color="text.secondary">
