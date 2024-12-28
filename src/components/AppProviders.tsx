@@ -6,19 +6,22 @@ import theme from '@/theme';
 import { CartProvider } from '@/contexts/CartContext';
 import ResponsiveAppBar from '@/components/Navbar';
 import { Container, CssBaseline } from '@mui/material';
+import ModeSwitcher from './ModeSwitcher';
 
 const AppProviders = ({ children }: { children: React.ReactNode }) => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme} disableTransitionOnChange>
+      <CssBaseline />
       <AppRouterCacheProvider>
         <CartProvider>
           <ResponsiveAppBar />
           <Container
             sx={{
-              marginTop: 10,
+              mt: 10,
+              mb: 5,
             }}
           >
-            <CssBaseline />
+            <ModeSwitcher />
             {children}
           </Container>
         </CartProvider>

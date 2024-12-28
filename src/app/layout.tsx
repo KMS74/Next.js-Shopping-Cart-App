@@ -1,5 +1,6 @@
 import { Roboto } from 'next/font/google';
 import { Metadata, Viewport } from 'next';
+import InitColorSchemeScript from '@mui/material/InitColorSchemeScript';
 import AppProviders from '@/components/AppProviders';
 
 const roboto = Roboto({
@@ -32,8 +33,9 @@ type Props = {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang="en" className={roboto.variable}>
+    <html lang="en" className={roboto.variable} suppressHydrationWarning>
       <body>
+        <InitColorSchemeScript attribute="class" />
         <AppProviders>{children}</AppProviders>
       </body>
     </html>
