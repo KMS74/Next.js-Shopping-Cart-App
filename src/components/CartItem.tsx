@@ -62,22 +62,24 @@ export const CartItemView = ({ item }: Props) => {
             <Stack alignItems="center" direction="row" spacing={1}>
               <IconButton
                 aria-label="decrease"
+                color="primary"
                 onClick={() => {
                   handleQuantityChange(item.quantity - 1);
                 }}
               >
-                <Remove fontSize="medium" htmlColor="#000" />
+                <Remove fontSize="medium" />
               </IconButton>
               <Typography color="grey" variant="h6">
                 &nbsp;{item.quantity}&nbsp;
               </Typography>
               <IconButton
                 aria-label="increase"
+                color="primary"
                 onClick={() => {
                   handleQuantityChange(item.quantity + 1);
                 }}
               >
-                <Add fontSize="medium" htmlColor="#000" />
+                <Add fontSize="medium" />
               </IconButton>
             </Stack>
           </Box>
